@@ -1,3 +1,4 @@
+#External Libraries
 import json
 import pandas as pd
 import matplotlib
@@ -8,15 +9,18 @@ jsonData = []
 
 class firstTask:
 
+    #list declaration
     countries = ''
     countryList = []
     countryCountList = []
 
+    #class contructor
     def __init__(self,path):
         with open(path) as data:
             for d in data:
                 jsonData.append(json.loads(d))
 
+    #creates a panda dataframe
     def createDataframe(self,data):
         df = pd.DataFrame(data,columns=['ts','visitor_uuid','visitor_username','visitor_source','visitor_device',
          'visitor_useragent','visitor_ip','visitor_country','visitor_referrer',
@@ -24,14 +28,17 @@ class firstTask:
          'env_type','subject_doc_id','subject_page','cause'])
         return df
 
+    #gets all rows of data pertaining to the document id
     def getDocID(self,d_id,data_frame):
         return data_frame.loc[data_frame['env_doc_id'] == d_id]
 
+    #groups countries and produces the total number of countries for a document
     def groupCountries(self,data):
         self.countries = data.groupby(['env_doc_id','visitor_country']).size().reset_index(name='Count')
         self.countryList = self.countries.visitor_country.values.tolist()
         self.countryCountList = self.countries.Count.values.tolist()
 
+    #creates a histogram
     def drawHistogram(self):
         x = len(self.countryList)
         plt.bar(range(x), self.countryCountList, align='center', alpha=0.4, color='blue')
@@ -40,6 +47,7 @@ class firstTask:
         plt.title('Number of countries represented')
         plt.show()
 
+#main function
 if __name__ == '__main__':
     t1 = firstTask('data.txt')
     df_t1 = t1.createDataframe(jsonData)

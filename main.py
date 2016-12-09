@@ -1,27 +1,20 @@
-#df = pd.DataFrame(jsonData, columns=['ts','visitor_uuid','visitor_username','visitor_source','visitor_device','visitor_useragent','visitor_ip','visitor_country','visitor_referrer','env_type','env_doc_id','env_adid','event_type','event_readtime','subject_type','env_type','subject_doc_id','subject_page','cause'])
-#print(df)
+import argparse
+import tkinter as tk
+import GUI as gui
+import sys
 
-import json
-import pandas as pd
+# def main():
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument('typeID', help='The deliverable you wish to see(2-4)',type=int)
+#     parser.add_argument('doctID', help='ID of the document whose histogram you wish to see')
+#
+#     args = parser.parse_args()
 
-jsonData = [] #list for issuu dataset
-continents = [] #list for continents
-country_To_Continent = [] #list for mapping a country to a continent
+def runGUI():
+    root = tk.Tk()
+    interface = gui.displayGUI(root,'GUI')
+    interface.mainloop()
 
-def loadfromfile(filename):
-    for d in filename:
-        jsonData.append(json.loads(d))
 
-    df = pd.DataFrame(jsonData)
-    
-
-def loadcontinents(filename):
-    for cont in filename:
-        continents.append(json.loads(cont))
-
-    return continents
-
-def map_Countries(filename):
-    for cont in filename:
-        country_To_Continent.append(json.loads(cont))
-
+if __name__ == '__main__':
+    runGUI()

@@ -10,11 +10,4 @@ import sys
 #
 #     args = parser.parse_args()
 
-def runGUI():
-    root = tk.Tk()
-    interface = gui.displayGUI(root,'GUI')
-    interface.mainloop()
 
-
-if __name__ == '__main__':
-    runGUI()

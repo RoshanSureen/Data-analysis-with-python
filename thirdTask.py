@@ -1,5 +1,4 @@
 import read_json as rj
-import histogram as hist
 
 class firstTask:
 

@@ -1,9 +1,10 @@
 from tkinter import *
 import tkinter as tk
 import firstTask as ft
+import secondTask as st
 
 root = tk.Tk()
-root.geometry("400x250+500+300")
+# root.geometry("400x250+500+300")
 
 root.title("This is the Main User GUI")
 
@@ -24,6 +25,12 @@ countryButton = Button(root,text='View by country',command= viewByCountry)
 countryButton.grid(row=2)
 continentButton = Button(root,text='View by continent',command= viewByContinent)
 continentButton.grid(row=2,column=1)
+
+def viewByBrowser():
+    st.taskTwo()
+
+browserButton = Button(root,text='View top browsers Used', command= viewByBrowser)
+browserButton.grid(row=3)
 
 root.mainloop()
 

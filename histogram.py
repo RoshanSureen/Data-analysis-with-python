@@ -15,16 +15,17 @@ class displayHistogram:
     yaxis_List = []
 
     main_browsers = ["Opera", "Dalvik", "Safari", "Chrome", 'Trident', 'Mozilla']
+
     userAgentdata = ''
 
     #groups countries and produces the total number of countries for a document
     def groupCountries(self,data):
             self.countries = data.groupby(['subject_doc_id','visitor_country']).size().reset_index(name='Count')
+
             self.xaxis_List = self.countries.visitor_country.values.tolist()
-
             self.yaxis_List = self.countries.Count.values.tolist()
-            self.drawHistogram()
 
+            self.drawHistogram()
 
     def groupContinents(self,data):
             self.continents = data.groupby(['subject_doc_id','visitor_country']).size().reset_index(name='Count')

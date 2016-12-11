@@ -16,9 +16,9 @@ class thirdTask:
 
 
 #main function
-if __name__ == '__main__':
+def taskThree():
     t1 = thirdTask('data.txt')
     df_t1 = rj.createDataframe()
 
     new_df = t1.top_readers(df_t1)
-    print(new_df)
+    return new_df

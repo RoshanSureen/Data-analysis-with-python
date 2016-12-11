@@ -16,4 +16,5 @@ def createDataframe():
      'visitor_useragent','visitor_ip','visitor_country','visitor_referrer',
      'env_type','env_doc_id','env_adid','event_type','event_readtime','subject_type',
      'env_type','subject_doc_id','subject_page','cause'])
+
     return df

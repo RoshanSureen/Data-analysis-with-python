@@ -1,12 +1,12 @@
 
 continents = {
-    'AF': 'Africa',
-    'AS': 'Asia',
-    'EU': 'Europe',
-    'NA': 'North America',
-    'SA': 'South America',
-    'OC': 'Oceania',
-    'AN': 'Antarctica'
+'AF': 'Africa',
+'AS': 'Asia',
+'EU': 'Europe',
+'NA': 'North America',
+'SA': 'South America',
+'OC': 'Oceania',
+'AN': 'Antarctica'
 }
 
 cntry_to_cont = {

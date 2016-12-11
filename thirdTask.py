@@ -1,12 +1,12 @@
 import read_json as rj
 
-class firstTask:
+class thirdTask:
 
     #class contructor
     def __init__(self,path):
         rj.readJson(path)
 
-    def readers(self,data_frame):
+    def top_readers(self,data_frame):
         data_frame = data_frame.groupby(['visitor_uuid', 'event_readtime']).sum().reset_index()
         data_frame = data_frame[data_frame.event_readtime.notnull()]
 
@@ -17,8 +17,8 @@ class firstTask:
 
 #main function
 if __name__ == '__main__':
-    t1 = firstTask('data.txt')
+    t1 = thirdTask('data.txt')
     df_t1 = rj.createDataframe()
 
-    new_df = t1.readers(df_t1)
+    new_df = t1.top_readers(df_t1)
     print(new_df)

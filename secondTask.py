@@ -1,7 +1,7 @@
 import histogram as hist
 import read_json as rj
 
-class firstTask:
+class secondTask:
 
     #class contructor
     def __init__(self,path):
@@ -13,7 +13,7 @@ class firstTask:
 
 #main function
 def taskTwo():
-    t1 = firstTask('data.txt')
+    t1 = secondTask('data.txt')
     df_t1 = rj.createDataframe()
 
     hist1 = hist.displayHistogram()

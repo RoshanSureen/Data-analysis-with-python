@@ -8,7 +8,7 @@ class thirdTask:
 
     def top_readers(self,data_frame):
         data_frame = data_frame.groupby(['visitor_uuid', 'event_readtime']).sum().reset_index()
-        data_frame = data_frame[data_frame.event_readtime.notnull()]
+        #data_frame = data_frame[data_frame.event_readtime.notnull()]
 
         data_frame = data_frame.sort_values(['event_readtime'], ascending=0)
         data_frame = data_frame.head(10)
